@@ -2,14 +2,15 @@
 
 # Verificando se um argumento foi passado
 if [ $# -eq 0 ]; then
-  echo "Por favor, forneça um nome de arquivo como argumento."
+  dialog --msgbox 'Por favor, forneça um nome como argumento.' 5 50
+  clear
   exit 1
 fi
 
-name2="0001"
+name2="my_prog"
 
 # Realiza alguma ação com o arquivo (imprimir neste caso)
-gcc -o $name2 $1
+gcc $1 -o $name2
 ./$name2
 rm $name2
 
